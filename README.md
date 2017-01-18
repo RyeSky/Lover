@@ -12,4 +12,4 @@
 
 后台：servlet，主要为手机端提供接口数据，暂时没有管理模块
 
-android:原生
+android:原生(使用了okhttp3、imageloarder、bufferknife)
