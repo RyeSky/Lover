@@ -12,4 +12,6 @@
 
 后台：servlet，主要为手机端提供接口数据，暂时没有管理模块
 
-android:原生(使用了okhttp3、imageloarder、bufferknife)
+android:原生(使用到的框架：网络请求->okhttp3、图片加载缓存->universal-image-loarder、组件获取事件监听依赖注入->bufferknife)
+
+手机端模块组成：悄悄话社交、私信聊天（不是IM，是PM）、个人中心
