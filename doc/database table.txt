@@ -1,106 +1,84 @@
-#app bug 信息表
-CREATE TABLE bugs
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    mobile_brand VARCHAR(36) COMMENT '手机品牌',
-    mobile_version VARCHAR(36) COMMENT '手机型号',
-    platform TINYINT(4) NOT NULL COMMENT '手机平台【0：android;1:ios】',
-    platform_version VARCHAR(36) NOT NULL COMMENT '平台系统版本号',
-    app_version VARCHAR(36) NOT NULL COMMENT 'app版本号',
-    bug_details VARCHAR(9000) NOT NULL COMMENT 'bug日志',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'bug创建时间'
-);
-#悄悄话收藏表
-CREATE TABLE collect_pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    pillow_talk_id INT(11) NOT NULL COMMENT '悄悄话ID',
-    collecter INT(11) NOT NULL COMMENT '收藏用户ID',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '收藏创建时间'
-);
-#悄悄话评论表
-CREATE TABLE comment_pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    pillow_talk_id INT(11) NOT NULL COMMENT '悄悄话ID',
-    commenter INT(11) NOT NULL COMMENT '评论用户ID',
-    content BLOB NOT NULL COMMENT '评论内容',
-    deleted TINYINT(4) DEFAULT '0' NOT NULL COMMENT '评论内容是否被删除【0：没有被删除;1：被删除】',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '评论创建时间'
-);
-#意见反馈表
-CREATE TABLE feedback
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    publisher INT(11) NOT NULL COMMENT '反馈意见用户ID',
-    content VARCHAR(200) NOT NULL COMMENT '反馈内容',
-    platform TINYINT(4) DEFAULT '0' NOT NULL COMMENT '手机平台【0：android;1:ios】',
-    platform_version VARCHAR(36) NOT NULL COMMENT '平台系统版本号',
-    app_version VARCHAR(36) NOT NULL COMMENT 'app版本号',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '反馈意见创建时间'
-);
-#悄悄话从表
-CREATE TABLE follow_pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    pillow_talk_id INT(11) NOT NULL COMMENT '悄悄话ID',
-    publisher INT(11) NOT NULL COMMENT '悄悄话从贴发表者ID',
-    content BLOB NOT NULL COMMENT '悄悄话内容',
-    deleted TINYINT(4) DEFAULT '0' NOT NULL COMMENT '悄悄话内容是否被删除【0：没有被删除;1：被删除】',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '悄悄话创建时间'
-);
-#相恋关系表
-CREATE TABLE lover_relationship
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    one INT(11) NOT NULL COMMENT '相恋关系中的一方',
-    another INT(11) NOT NULL COMMENT '相恋关系中的另一方',
-    deleted TINYINT(4) DEFAULT '0' NOT NULL COMMENT '相恋是否被删除【0：没有被删除;1：被删除】',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '相恋关系创建时间'
-);
-#悄悄话主表
-CREATE TABLE pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    publisher INT(11) NOT NULL COMMENT '悄悄话发表者ID',
-    another INT(11) NOT NULL COMMENT '悄悄话发表者相恋关系中的另一方',
-    content BLOB COMMENT '悄悄话内容',
-    imgs LONGTEXT COMMENT '悄悄话内容包含的图片URL，多张图片用英文逗号分隔',
-    publisher_open TINYINT(4) DEFAULT '0' NOT NULL COMMENT '悄悄话发表者是否愿意公开悄悄话内容【0：不公开;1:公开】',
-    another_open TINYINT(4) DEFAULT '0' NOT NULL COMMENT '另一方是否愿意公开悄悄话内容【0：不公开;1:公开】',
-    deleted TINYINT(4) DEFAULT '0' NOT NULL COMMENT '悄悄话内容是否被删除【0：没有被删除;1：被删除】',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '悄悄话创建时间'
-);
-#赞悄悄话表
-CREATE TABLE praise_pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    pillow_talk_id INT(11) NOT NULL COMMENT '悄悄话ID',
-    praiser INT(11) NOT NULL COMMENT '赞悄悄话用户ID',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '悄悄话赞创建时间'
-);
-#举报悄悄话表
-CREATE TABLE report_pillow_talk
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    pillow_talk_id INT(11) NOT NULL COMMENT '悄悄话ID',
-    reporter INT(11) NOT NULL COMMENT '举报悄悄话用户ID',
-    content VARCHAR(200) NOT NULL COMMENT '举报理由',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '举报悄悄话创建时间'
-);
 #用户信息表
-CREATE TABLE user
-(
-    id INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    name VARCHAR(36) NOT NULL COMMENT '登录名',
-    nickname VARCHAR(36) NOT NULL COMMENT '昵称',
-    password VARCHAR(128) NOT NULL COMMENT 'md5加密的密码',
-    gender TINYINT(4) DEFAULT '0' NOT NULL COMMENT '性别【0：保密；1：男；2：女】',
-    avatar LONGTEXT COMMENT '头像url',
-    birthday DATE COMMENT '生日',
-    login_time timestamp NULL DEFAULT NULL COMMENT '用户最后登录时间',
-    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '用户注册时间'
-);
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(36) NOT NULL COMMENT '登录名',
+  `nickname` varchar(36) NOT NULL COMMENT '昵称',
+  `password` varchar(128) NOT NULL COMMENT 'md5加密的密码',
+  `gender` tinyint(4) NOT NULL DEFAULT '0' COMMENT '性别【0：保密；1：男；2：女】',
+  `avatar` longtext COMMENT '头像url',
+  `birthday` date DEFAULT NULL COMMENT '生日',
+  `login_time` timestamp NULL DEFAULT NULL COMMENT '用户最后登录时间',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '用户注册时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户相关数据'
+#相恋关系表
+CREATE TABLE `lover_relationship` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `one` int(11) NOT NULL COMMENT '相恋关系中的一方',
+  `another` int(11) NOT NULL COMMENT '相恋关系中的另一方',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT '相恋是否被删除【0：没有被删除;1：被删除】',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '相恋关系创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='记录用户的相恋关系。只有两个用户在表中有两条记录时，相恋关系才成立'
+#悄悄话主表
+CREATE TABLE `pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `publisher` int(11) NOT NULL COMMENT '悄悄话发表者ID',
+  `another` int(11) NOT NULL COMMENT '悄悄话发表者相恋关系中的另一方',
+  `content` blob COMMENT '悄悄话内容',
+  `imgs` longtext COMMENT '悄悄话内容包含的图片URL，多张图片用英文逗号分隔',
+  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '类型：【0：悄悄话；1：广播】',
+  `publisher_open` tinyint(4) NOT NULL DEFAULT '0' COMMENT '悄悄话发表者是否愿意公开悄悄话内容【0：不公开;1:公开】',
+  `another_open` tinyint(4) NOT NULL DEFAULT '0' COMMENT '另一方是否愿意公开悄悄话内容【0：不公开;1:公开】',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT '悄悄话内容是否被删除【0：没有被删除;1：被删除】',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '悄悄话创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='记录悄悄话或世界广播'
+#悄悄话从表
+CREATE TABLE `follow_pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pillow_talk_id` int(11) NOT NULL COMMENT '悄悄话ID',
+  `publisher` int(11) NOT NULL COMMENT '悄悄话从贴发表者ID',
+  `content` blob NOT NULL COMMENT '悄悄话内容',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT '悄悄话内容是否被删除【0：没有被删除;1：被删除】',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '悄悄话创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='记录相恋的两个用户之间的悄悄话往来'
+#悄悄话评论表
+CREATE TABLE `comment_pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pillow_talk_id` int(11) NOT NULL COMMENT '悄悄话ID',
+  `commenter` int(11) NOT NULL COMMENT '评论用户ID',
+  `content` blob NOT NULL COMMENT '评论内容',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0' COMMENT '评论内容是否被删除【0：没有被删除;1：被删除】',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '评论创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='记录用户对悄悄话或世界广播的评论'
+#悄悄话收藏表
+CREATE TABLE `collect_pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pillow_talk_id` int(11) NOT NULL COMMENT '悄悄话ID',
+  `collecter` int(11) NOT NULL COMMENT '收藏用户ID',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='记录用户收藏的悄悄话或世界广播'
+#赞悄悄话表
+CREATE TABLE `praise_pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pillow_talk_id` int(11) NOT NULL COMMENT '悄悄话ID',
+  `praiser` int(11) NOT NULL COMMENT '赞悄悄话用户ID',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '悄悄话赞创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='记录用户赞过的悄悄话或世界广播'
+#举报悄悄话表
+CREATE TABLE `report_pillow_talk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pillow_talk_id` int(11) NOT NULL COMMENT '悄悄话ID',
+  `reporter` int(11) NOT NULL COMMENT '举报悄悄话用户ID',
+  `content` varchar(200) NOT NULL COMMENT '举报理由',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '举报悄悄话创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='记录用户举报的悄悄话或世界广播'
 #私信会话表
 CREATE TABLE `private_message_session` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -118,7 +96,7 @@ CREATE TABLE `private_message` (
   `content` blob NOT NULL COMMENT '私信内容',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '私信赞创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='记录用户之间的私信往来'
 #私信删除表
 CREATE TABLE `private_message_delete` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -127,3 +105,26 @@ CREATE TABLE `private_message_delete` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间截',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='私信删除表'
+#app bug 信息表
+CREATE TABLE `bugs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mobile_brand` varchar(36) DEFAULT NULL COMMENT '手机品牌',
+  `mobile_version` varchar(36) DEFAULT NULL COMMENT '手机型号',
+  `platform` tinyint(4) NOT NULL COMMENT '手机平台【0：android;1:ios】',
+  `platform_version` varchar(36) NOT NULL COMMENT '平台系统版本号',
+  `app_version` varchar(36) NOT NULL COMMENT 'app版本号',
+  `bug_details` varchar(9000) NOT NULL COMMENT 'bug日志',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'bug创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='app bug 信息表'
+#意见反馈表
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `publisher` int(11) NOT NULL COMMENT '反馈意见用户ID',
+  `content` varchar(200) NOT NULL COMMENT '反馈内容',
+  `platform` tinyint(4) NOT NULL DEFAULT '0' COMMENT '手机平台【0：android;1:ios】',
+  `platform_version` varchar(36) NOT NULL COMMENT '平台系统版本号',
+  `app_version` varchar(36) NOT NULL COMMENT 'app版本号',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '反馈意见创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='记录用户的意见反馈'
