@@ -1,0 +1,4 @@
+操作系统：win7 旗舰版 64位；cpu:intel i3 2.3Ghz；内存：10G
+数据库：mysql 5.5
+服务器端程序IDE：intellij idea 2016.3.1(64)
+android端程序IDE:Android Studio 2.2.3
