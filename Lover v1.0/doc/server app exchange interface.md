@@ -23,7 +23,7 @@
  <p>
  返回示例<br>
  成功时：{"code":0,"result":{"id":"4","name":"rsmissyou","password":
- "123456","nickname":"花开一半","avatar":"huakaiyiban","birthday":"1990-10-31",
+ "e10adc3949ba59abbe56e057f20f883e","nickname":"花开一半","avatar":"huakaiyiban","birthday":"1990-10-31",
  "loginTime"
  :"1468311837539","createTime":"1465440326000","another":"2","gender"
  :1,"anotherNickname":"想念","anotherGender":2},"message":"请求成功"} <br>
@@ -105,7 +105,7 @@
  <h2 style="{text-align:center;}">用户注册</h2> 请求方式：POST，调试时暂时支持GET
  <p>
  请求示例：http://localhost:8080/Lover/servlet/user/Register?parameter={"name":
- "rsmissyou","password":"123456","gender":"1"}
+ "rsmissyou","password":"e10adc3949ba59abbe56e057f20f883e","gender":"1"}
  </p>
  请求参数
  <table style="{text-align:center;}" frame="hsides" rules="all" summary="请求参数" width="100%" border="2">
@@ -214,7 +214,7 @@
  </p>
  <h2 style="{text-align:center;}">更新用户生日</h2> 请求方式：POST，调试时暂时支持GET
  <p>
- 请求示例：http://localhost:8080/Lover/servlet/user/UpdateBirthday?parameter={"userId": "1","birthday":"123456"}
+ 请求示例：http://localhost:8080/Lover/servlet/user/UpdateBirthday?parameter={"userId": "1","birthday":"1990-02-10"}
  </p>
  请求参数
  <table style="{text-align:center;}" frame="hsides" rules="all" summary="请求参数" width="100%" border="2">
@@ -240,7 +240,7 @@
  </p>
  <h2 style="{text-align:center;}">更新用户密码</h2> 请求方式：POST，调试时暂时支持GET
  <p>
- 请求示例：http://localhost:8080/Lover/servlet/user/UpdatePassword?parameter={"userId": "1","oldPassword":"123456","newPassword":"123456"}
+ 请求示例：http://localhost:8080/Lover/servlet/user/UpdatePassword?parameter={"userId": "1","oldPassword":"e10adc3949ba59abbe56e057f20f883e","newPassword":"e10adc3949ba59abbe56e057f20f883e"}
  </p>
  请求参数
  <table style="{text-align:center;}" frame="hsides" rules="all" summary="请求参数" width="100%" border="2">
@@ -330,7 +330,7 @@
  <p>
  返回示例<br>
  成功时：{"code":0,"result":{"id":"4","name":"rsmissyou","password":
- "123456","nickname":"花开一半","avatar":"huakaiyiban","birthday":"1990-10-31",
+ "e10adc3949ba59abbe56e057f20f883e","nickname":"花开一半","avatar":"huakaiyiban","birthday":"1990-10-31",
  "loginTime"
  :"1468311837539","createTime":"1465440326000","another":"2","gender"
  :1,"anotherNickname":"想念","anotherGender":2},"message":"请求成功"} <br>
