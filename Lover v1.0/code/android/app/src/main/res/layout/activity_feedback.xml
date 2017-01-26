@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--意见反馈界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context="com.skye.lover.activity.my.setting.FeedbackActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height" />
+
+    <!-- 意见内容 -->
+
+    <EditText
+        android:id="@+id/ed_feedback"
+        style="@style/single_white_edittext"
+        android:layout_height="150dp"
+        android:layout_marginTop="@dimen/vertical"
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:maxLength="@integer/max_content_length"
+        android:paddingBottom="@dimen/vertical"
+        android:paddingTop="@dimen/vertical"
+        android:hint="@string/feedback_can_not_empty"
+        android:singleLine="false" />
+
+    <!-- 确定 -->
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/selector_light_blue"
+        android:text="@string/ok"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/main_text_size" />
+</LinearLayout>

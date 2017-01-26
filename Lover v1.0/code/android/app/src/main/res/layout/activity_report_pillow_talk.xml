@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><!--举报悄悄话界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_report_pillow_talk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context="com.skye.lover.activity.pillowtalk.ReportPillowTalkActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height" />
+
+    <!--举报内容 -->
+
+    <EditText
+        android:id="@+id/ed_report"
+        style="@style/single_white_edittext"
+        android:layout_height="150dp"
+        android:layout_marginTop="@dimen/vertical"
+        android:gravity="start"
+        android:hint="@string/report_can_not_empty"
+        android:inputType="textMultiLine"
+        android:maxLength="@integer/max_content_length"
+        android:paddingBottom="@dimen/vertical"
+        android:paddingTop="@dimen/vertical"
+        android:singleLine="false" />
+
+    <!-- 确定 -->
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/selector_light_blue"
+        android:text="@string/ok"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/main_text_size" />
+</LinearLayout>

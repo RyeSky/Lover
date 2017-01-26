@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/impl/BugDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/impl/FollowPillowTalkDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/impl/LoverRelationshipDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/impl/PillowTalkDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/impl/UserDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/interf/FollowPillowTalkDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/interf/LoverRelationshipDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/dao/interf/PillowTalkDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/filter/EncodingFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/BaseResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/Bug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/FollowPillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/ListResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/LoverRelationship.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/PillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/model/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/service/FollowPillowTalkService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/service/PillowTalkService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/service/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/common/FileUpload.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/common/SubmitBug.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/DeletePillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/Find.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/HoneyWord.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/OpenPillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/PublishPillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/followpillowtalk/DeleteFollowPillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/pillowtalk/followpillowtalk/PublishFollowPillowTalk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/Login.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/Register.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/UpdateAvatar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/UpdateBirthday.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/UpdateGender.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/UpdateNickname.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/servlet/user/UpdatePassword.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/util/CommonUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/skye/lover/util/Const.java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="horizontal">15dp</dimen>
+    <dimen name="vertical">10dp</dimen>
+    <dimen name="vertical_half">5dp</dimen>
+    <dimen name="title">18sp</dimen>
+    <dimen name="text">15sp</dimen>
+    <dimen name="split_line">0.7dp</dimen>
+</resources>

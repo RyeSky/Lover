@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/vertical"
+    android:paddingTop="@dimen/vertical" >
+
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal"
+        android:text="二月 2016"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_marginBottom="@dimen/vertical"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@color/bg_gray" />
+
+    <com.skye.datepicker.DaiesView
+        android:id="@+id/daies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >
+    </com.skye.datepicker.DaiesView>
+
+</LinearLayout>

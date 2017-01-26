@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "com.skye.lover"
+        minSdkVersion 11
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "6817d560236f363cd5d05541",
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.jakewharton:butterknife:8.0.1'
+    compile 'cn.jiguang.sdk:jpush:3.0.1'
+    compile 'cn.jiguang.sdk:jcore:1.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile(name: 'actionsheet', ext: 'aar')
+    compile(name: 'datepicker', ext: 'aar')
+    compile(name: 'emoji', ext: 'aar')
+}

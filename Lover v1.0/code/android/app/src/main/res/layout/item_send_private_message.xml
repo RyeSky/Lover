@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:paddingBottom="@dimen/vertical"
+    android:paddingLeft="@dimen/horizontal"
+    android:paddingRight="@dimen/horizontal">
+
+    <!-- 时间 -->
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/shape_empty"
+        android:paddingBottom="@dimen/item_vertical_half"
+        android:paddingLeft="@dimen/item_vertical"
+        android:paddingRight="@dimen/item_vertical"
+        android:paddingTop="@dimen/item_vertical_half"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/time_hint_text_size"
+        android:visibility="gone" />
+
+    <!--头像com.skye.lover.view.CircularImage-->
+
+    <com.skye.lover.view.CircularImage
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/avatar"
+        android:layout_height="@dimen/avatar"
+        android:layout_below="@id/time"
+        android:layout_marginTop="@dimen/vertical"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shape_secret" />
+
+    <!-- 昵称 -->
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/avatar"
+        android:layout_marginLeft="@dimen/item_vertical"
+        android:layout_toRightOf="@id/avatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/sub_title_size" />
+
+    <!-- 最后一条私信聊天内容 -->
+
+    <com.skye.emoji.EmojiTextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nickname"
+        android:layout_marginLeft="@dimen/item_vertical"
+        android:layout_marginTop="@dimen/vertical"
+        android:layout_toRightOf="@id/avatar"
+        android:background="@drawable/selector_light_blue"
+        android:ellipsize="end"
+        android:maxLines="7"
+        android:paddingBottom="@dimen/item_vertical_half"
+        android:paddingLeft="@dimen/item_vertical"
+        android:paddingRight="@dimen/item_vertical"
+        android:paddingTop="@dimen/item_vertical_half"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/main_text_size" />
+</RelativeLayout>

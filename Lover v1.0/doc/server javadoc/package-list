@@ -1,0 +1,17 @@
+com.skye.lover.dao
+com.skye.lover.dao.impl
+com.skye.lover.dao.interf
+com.skye.lover.filter
+com.skye.lover.model
+com.skye.lover.service
+com.skye.lover.servlet.common
+com.skye.lover.servlet.loverrelatiionship
+com.skye.lover.servlet.message
+com.skye.lover.servlet.pillowtalk
+com.skye.lover.servlet.pillowtalk.collect
+com.skye.lover.servlet.pillowtalk.comment
+com.skye.lover.servlet.pillowtalk.followpillowtalk
+com.skye.lover.servlet.pillowtalk.praise
+com.skye.lover.servlet.privatemessage
+com.skye.lover.servlet.user
+com.skye.lover.util

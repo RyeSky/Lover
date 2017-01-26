@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context=".activity.my.userinfo.UpdateBirthdayActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height" />
+
+
+    <com.skye.datepicker.DataPicker
+        android:id="@+id/datepicker"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 确定 -->
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="@dimen/vertical"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/selector_light_blue"
+        android:text="@string/ok"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/main_text_size" />
+</LinearLayout>

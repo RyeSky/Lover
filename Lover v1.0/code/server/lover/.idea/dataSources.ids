@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - lover@localhost" uuid="997f0494-13d4-4f11-9856-c4465a7cd3fa">
+    <database-info product="MySQL" version="5.5.33" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="lover">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="test"/>
+      <table id="6" parent="1" name="bugs">
+        <comment>当app崩溃时，app端保存日志信息，在程序重新启动时提交到服务器</comment>
+      </table>
+      <table id="7" parent="1" name="collect_pillow_talk">
+        <comment>记录用户收藏了哪些公开的悄悄话（不是自己或另一方发的）</comment>
+      </table>
+      <table id="8" parent="1" name="comment_pillow_talk">
+        <comment>登录用户可以对公开的悄悄话进行评论（仅限于评论主悄悄话），评论后，悄悄话发起人通过私信和评论人沟通，评论不盖楼</comment>
+      </table>
+      <table id="9" parent="1" name="feedback">
+        <comment>用户意见反馈表</comment>
+      </table>
+      <table id="10" parent="1" name="follow_pillow_talk">
+        <comment>记录跟随主悄悄话的从悄悄话（相当于主贴的回帖）,只能是悄悄话发起人和相恋的另一方</comment>
+      </table>
+      <table id="11" parent="1" name="lover_relationship">
+        <comment>记录相恋关系，表中有1对2的关系和2对1的关系，1和2才有相恋关系，只有一条记录或被删除，相恋关系不成立</comment>
+      </table>
+      <table id="12" parent="1" name="pillow_talk">
+        <comment>记录有相恋关系的用户发表的悄悄话（相当于帖子中的主贴）。只有相恋关系的两个人都同意把这条悄悄话公开，这条悄悄话才会被其他用户看到</comment>
+      </table>
+      <table id="13" parent="1" name="praise_pillow_talk">
+        <comment>记录用户赞过哪些公开的悄悄话（不是自己或另一方发的）</comment>
+      </table>
+      <table id="14" parent="1" name="private_message">
+        <comment>记录两个用户之间的聊天记录（不是IM，应该叫PM，但可以有消息及时送达的效果）</comment>
+      </table>
+      <table id="15" parent="1" name="report_pillow_talk">
+        <comment>登录用户可以对含有不良信息的公开悄悄话进行举报</comment>
+      </table>
+      <table id="16" parent="1" name="user">
+        <comment>用来保存用户信息</comment>
+      </table>
+      <column id="17" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="18" parent="6" name="mobile_brand">
+        <comment>手机品牌</comment>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="19" parent="6" name="mobile_version">
+        <comment>手机型号</comment>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="20" parent="6" name="platform">
+        <comment>手机平台【0：android;1:ios】</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="21" parent="6" name="platform_version">
+        <comment>平台系统版本号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="22" parent="6" name="app_version">
+        <comment>app版本号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="23" parent="6" name="bug_details">
+        <comment>bug日志</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(9000)|0</data-type>
+      </column>
+      <column id="24" parent="6" name="create_time">
+        <comment>bug创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="25" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="26" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="27" parent="7" name="pillow_talk_id">
+        <comment>悄悄话id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="28" parent="7" name="collecter">
+        <comment>收藏悄悄话的用户ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="29" parent="7" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="30" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="31" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="32" parent="8" name="pillow_talk_id">
+        <comment>悄悄话id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="33" parent="8" name="commenter">
+        <comment>评论者id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="34" parent="8" name="content">
+        <comment>评论内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="35" parent="8" name="deleted">
+        <comment>评论是否被删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="36" parent="8" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="37" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="38" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="39" parent="9" name="publisher">
+        <comment>意见反馈发布者id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="40" parent="9" name="content">
+        <comment>反馈内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="41" parent="9" name="platform">
+        <comment>手机平台【0：android;1:ios】</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="42" parent="9" name="platform_version">
+        <comment>平台系统版本号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="43" parent="9" name="app_version">
+        <comment>app版本号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="44" parent="9" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="45" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="46" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="47" parent="10" name="pillow_talk_id">
+        <comment>悄悄话id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="48" parent="10" name="publisher">
+        <comment>悄悄话发布者</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="49" parent="10" name="content">
+        <comment>悄悄话内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="50" parent="10" name="deleted">
+        <comment>是否被删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="51" parent="10" name="create_time">
+        <comment>是否被删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="52" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="53" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="54" parent="11" name="one">
+        <comment>相爱关系中的一方</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="55" parent="11" name="another">
+        <comment>相爱关系中的另一方</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="56" parent="11" name="deleted">
+        <comment>相爱关系是否删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="57" parent="11" name="create_time">
+        <comment>相爱关系建立时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="58" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="59" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="60" parent="12" name="publisher">
+        <comment>发表用户的id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="61" parent="12" name="another">
+        <comment>悄悄话对方</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="62" parent="12" name="content">
+        <comment>悄悄话内容</comment>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="63" parent="12" name="imgs">
+        <comment>图片路径，多张图片用逗号分隔</comment>
+        <data-type>longtext|0</data-type>
+      </column>
+      <column id="64" parent="12" name="publisher_open">
+        <comment>悄悄话发布者愿意公开悄悄话内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="65" parent="12" name="another_open">
+        <comment>悄悄话另一方同意公开悄悄话内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="66" parent="12" name="deleted">
+        <comment>是否被删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="67" parent="12" name="create_time">
+        <comment>悄悄话创建时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="68" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="69" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="70" parent="13" name="pillow_talk_id">
+        <comment>悄悄话id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="71" parent="13" name="praiser">
+        <comment>赞悄悄话的用户ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="72" parent="13" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="73" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="74" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="75" parent="14" name="sender_id">
+        <comment>私信发送方用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="76" parent="14" name="receiver_id">
+        <comment>接收方用户id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="77" parent="14" name="content">
+        <comment>私信内容</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="78" parent="14" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="79" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="80" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="81" parent="15" name="pillow_talk_id">
+        <comment>悄悄话id</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="82" parent="15" name="reporter">
+        <comment>举报悄悄话的用户ID</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="83" parent="15" name="content">
+        <comment>举报理由</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)|0</data-type>
+      </column>
+      <column id="84" parent="15" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="85" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="86" parent="16" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="87" parent="16" name="name">
+        <comment>用户账号</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="88" parent="16" name="nickname">
+        <comment>用户昵称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(36)|0</data-type>
+      </column>
+      <column id="89" parent="16" name="password">
+        <comment>用户密码，使用md5加密后的</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)|0</data-type>
+      </column>
+      <column id="90" parent="16" name="gender">
+        <comment>用户性别【0：保密；1：男；2：女】</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="91" parent="16" name="avatar">
+        <comment>用户头像url</comment>
+        <data-type>longtext|0</data-type>
+      </column>
+      <column id="92" parent="16" name="birthday">
+        <comment>生日</comment>
+        <data-type>date|0</data-type>
+      </column>
+      <column id="93" parent="16" name="login_time">
+        <comment>用户登录时间</comment>
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="94" parent="16" name="create_time">
+        <comment>用户注册时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <key id="95" parent="16" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

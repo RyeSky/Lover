@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.skye.lover">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".LoverApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.NoTitleBar">
+
+        <receiver
+            android:name="com.skye.lover.receiver.JPushMessageReceiver"
+            android:enabled="true"
+            tools:node="replace">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.skye.lover" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 闪屏界面 -->
+        <activity
+            android:name=".activity.base.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppStartLoadTranslucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 登录界面 -->
+        <activity
+            android:name=".activity.user.LoginActivity"
+            android:screenOrientation="portrait" />
+        <!-- 注册界面 -->
+        <activity
+            android:name=".activity.user.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <!-- 单身者主界面 -->
+        <activity
+            android:name=".activity.MainSingleActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 相爱者主界面 -->
+        <activity
+            android:name=".activity.MainLoverActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 设置界面 -->
+        <activity
+            android:name=".activity.my.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <!-- 用户信息界面 -->
+        <activity
+            android:name=".activity.my.userinfo.UserInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- 头像界面 -->
+        <activity
+            android:name=".activity.my.userinfo.AvatarActivity"
+            android:screenOrientation="portrait" />
+        <!-- 更新昵称界面 -->
+        <activity
+            android:name=".activity.my.userinfo.UpdateNicknameActivity"
+            android:screenOrientation="portrait" />
+        <!-- 更新性别界面 -->
+        <activity
+            android:name=".activity.my.userinfo.UpdateGenderActivity"
+            android:screenOrientation="portrait" />
+        <!-- 更新生日界面 -->
+        <activity
+            android:name=".activity.my.userinfo.UpdateBirthdayActivity"
+            android:screenOrientation="portrait" />
+        <!-- 更新密码界面 -->
+        <activity
+            android:name=".activity.my.userinfo.UpdatePasswordActivity"
+            android:screenOrientation="portrait" />
+        <!-- 意见反馈界面 -->
+        <activity
+            android:name=".activity.my.setting.FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <!-- 发表悄悄话界面 -->
+        <activity
+            android:name=".activity.pillowtalk.PublishPillowTalkActivity"
+            android:screenOrientation="portrait" />
+        <!-- 本地手机相册界面 -->
+        <activity
+            android:name=".activity.common.localphotoalbum.LocalPhotoAlbumActivity"
+            android:screenOrientation="portrait" />
+        <!-- 相册文件夹界面 -->
+        <activity
+            android:name=".activity.common.localphotoalbum.PhotoFolderActivity"
+            android:screenOrientation="portrait" />
+        <!-- 悄悄话详情界面 -->
+        <activity
+            android:name=".activity.pillowtalk.PillowTalkDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 世界广播界面 -->
+        <activity
+            android:name=".activity.pillowtalk.BroadcastDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 举报悄悄话界面 -->
+        <activity
+            android:name=".activity.pillowtalk.ReportPillowTalkActivity"
+            android:screenOrientation="portrait" />
+        <!-- 显示图片界面 -->
+        <activity
+            android:name=".activity.common.localphotoalbum.ShowPictureActivity"
+            android:screenOrientation="portrait" />
+        <!-- 回复界面 -->
+        <activity
+            android:name=".activity.pillowtalk.ReplyActivity"
+            android:screenOrientation="portrait" />
+        <!-- 评论列表界面 -->
+        <activity
+            android:name=".activity.pillowtalk.comment.CommentListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 发表评论界面 -->
+        <activity
+            android:name=".activity.pillowtalk.comment.PublishCommentActivity"
+            android:screenOrientation="portrait" />
+        <!-- 用户收藏的悄悄话列表 -->
+        <activity
+            android:name=".activity.my.CollectedPillowTalkListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 用户赞过的悄悄话列表 -->
+        <activity
+            android:name=".activity.my.PraisedPillowTalkListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 用户评论过的悄悄话列表 -->
+        <activity
+            android:name=".activity.my.CommentedPillowTalkListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 私信聊天界面 -->
+        <activity
+            android:name=".activity.privatemessage.PrivateMessageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!-- 其他用户信息界面 -->
+        <activity
+            android:name=".activity.user.OtherInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- 其他用户发表的悄悄话列表 -->
+        <activity
+            android:name=".activity.pillowtalk.OthersPillowTalkListActivity"
+            android:screenOrientation="portrait" />
+        <!--消息列表界面-->
+        <activity
+            android:name=".activity.my.MessageListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

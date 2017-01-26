@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_gray"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/vertical_half"
+        android:paddingTop="@dimen/vertical_half" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/sunday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/monday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/tuesday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/wednesday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/thursday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/friday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/saturday"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/no"
+        android:divider="@color/bg_gray"
+        android:dividerHeight="@dimen/split_line" >
+    </ListView>
+
+</merge>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?><!--悄悄话详情界面-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pillow_talk_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    tools:context="com.skye.lover.activity.pillowtalk.PillowTalkDetailActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/split_line"
+        android:layout_below="@id/topbar"
+        android:cacheColorHint="@color/no_color"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@color/no_color"
+        android:smoothScrollbar="true" />
+
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_above="@+id/btns"
+        android:background="@color/split_line" />
+
+    <LinearLayout
+        android:id="@+id/btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/vertical"
+        android:paddingTop="@dimen/vertical">
+
+        <!--回复-->
+
+        <TextView
+            android:id="@+id/tv_reply"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/selector_pillow_talk_detail_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/item_vertical"
+            android:paddingTop="@dimen/item_vertical"
+            android:text="@string/reply"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/main_text_size"
+            android:visibility="gone" />
+
+        <!--看评论-->
+
+        <TextView
+            android:id="@+id/tv_look_comments"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal"
+            android:layout_marginRight="@dimen/horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/selector_pillow_talk_detail_btn"
+            android:gravity="center"
+            android:paddingBottom="@dimen/item_vertical"
+            android:paddingTop="@dimen/item_vertical"
+            android:text="@string/look_comments"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/main_text_size" />
+
+        <!--页数-->
+
+        <TextView
+            android:id="@+id/tv_pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/horizontal"
+            android:background="@drawable/selector_pillow_talk_detail_btn"
+            android:gravity="center"
+            android:padding="@dimen/item_vertical"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/main_text_size"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

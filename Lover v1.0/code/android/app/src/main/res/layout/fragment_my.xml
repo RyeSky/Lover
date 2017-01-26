@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 我的碎片 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@color/split_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_white"
+        android:paddingBottom="@dimen/vertical"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal"
+        android:paddingTop="@dimen/vertical">
+
+        <!--头像-->
+
+        <com.skye.lover.view.CircularImage
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/big_avatar"
+            android:layout_height="@dimen/big_avatar"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shape_empty" />
+
+        <!--昵称-->
+
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/img_avatar"
+            android:layout_below="@id/img_avatar"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="@dimen/item_vertical"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="@dimen/sub_title_size" />
+
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_next" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@color/split_line" />
+
+    <View
+        android:id="@+id/split_line_another_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@color/split_line"
+        android:visibility="gone" />
+
+    <!--另一方-->
+
+    <LinearLayout
+        android:id="@+id/ll_another"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/vertical"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal"
+        android:paddingTop="@dimen/vertical"
+        android:visibility="gone">
+
+        <!--另一方头像-->
+
+        <com.skye.lover.view.CircularImage
+            android:id="@+id/img_avatar_another"
+            android:layout_width="@dimen/avatar"
+            android:layout_height="@dimen/avatar"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shape_empty" />
+
+        <!--另一方昵称-->
+
+        <TextView
+            android:id="@+id/tv_nickname_another"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/horizontal"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:layout_marginLeft="@dimen/horizontal"
+            android:background="@drawable/shape_next" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/split_line_another_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@color/split_line"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@color/split_line" />
+
+    <!--收藏-->
+
+    <LinearLayout
+        android:id="@+id/ll_collection"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/collection"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/main_text_size" />
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:background="@drawable/shape_next" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@drawable/layer_split_line" />
+
+    <!--赞-->
+
+    <LinearLayout
+        android:id="@+id/ll_praise"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/praise"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/main_text_size" />
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:background="@drawable/shape_next" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@drawable/layer_split_line" />
+
+    <!--评论-->
+
+    <LinearLayout
+        android:id="@+id/ll_comment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/comment"
+            android:textColor="@color/text_green"
+            android:textSize="@dimen/main_text_size" />
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:background="@drawable/shape_next" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@color/split_line" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@color/split_line" />
+
+    <!--消息-->
+
+    <LinearLayout
+        android:id="@+id/ll_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/horizontal"
+        android:paddingRight="@dimen/horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/message"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/main_text_size" />
+
+        <View
+            android:layout_width="@dimen/small_mark"
+            android:layout_height="@dimen/small_mark"
+            android:background="@drawable/shape_next" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:background="@color/split_line" />
+</LinearLayout>
