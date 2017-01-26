@@ -1,6 +1,6 @@
 <h2 style="{text-align:center;}">用户登录</h2> 请求方式：POST，调试时暂时支持GET
  <p>
- 请求示例：http://localhost:8080/Lover/servlet/user/Login?parameter={"name":"rsmissyou","password":"123456"}
+ 请求示例：http://localhost:8080/Lover/servlet/user/Login?parameter={"name":"rsmissyou","password":"e10adc3949ba59abbe56e057f20f883e"}
  </p>
  请求参数
  <table style="{text-align:center;}" frame="hsides" rules="all" summary="请求参数" width="100%" border="2">
