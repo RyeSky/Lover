@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="max_text_line">2</integer>
-    <integer name="max_text_length">10</integer>
-    <integer name="max_password_length">24</integer>
-    <integer name="max_content_length">200</integer>
-</resources>
