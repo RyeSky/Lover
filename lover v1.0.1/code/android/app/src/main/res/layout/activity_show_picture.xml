@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--显示图片界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_show_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context="com.skye.lover.activity.common.ShowPictureActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+    <com.skye.lover.view.ScalePhotoViewPager
+        android:id="@+id/spvp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+</LinearLayout>

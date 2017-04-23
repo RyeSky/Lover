@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--描述界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context="com.skye.lover.activity.base.DescriptionActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_descrption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/vertical"
+            android:layout_marginLeft="@dimen/horizontal"
+            android:layout_marginRight="@dimen/horizontal"
+            android:layout_marginTop="@dimen/vertical"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/main_text_size" />
+    </ScrollView>
+</LinearLayout>

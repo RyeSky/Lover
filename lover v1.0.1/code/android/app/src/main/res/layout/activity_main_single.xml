@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?><!--单身者主界面-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    tools:context="com.skye.lover.activity.MainSingleActivity">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/split_line" />
+
+
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/split_line"
+        android:layout_above="@+id/rg"
+        android:background="@color/split_line" />
+
+    <!-- 底部导航 -->
+
+    <com.skye.lover.view.FlowRadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_white"
+        android:orientation="horizontal">
+
+        <!-- 发现 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_find"
+                style="@style/foot_nav_btn_style"
+                android:checked="true"
+                android:text="@string/find" />
+
+            <RelativeLayout
+                android:layout_width="37dip"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <View
+                    android:id="@+id/find_unread"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginTop="11dip"
+                    android:background="@drawable/shape_red_dot"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- 聊聊 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_chat"
+                style="@style/foot_nav_btn_style"
+                android:text="@string/chat" />
+
+            <RelativeLayout
+                android:layout_width="37dip"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <View
+                    android:id="@+id/chat_unread"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginTop="11dip"
+                    android:background="@drawable/shape_red_dot"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- 我的 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                android:id="@+id/rb_my"
+                style="@style/foot_nav_btn_style"
+                android:text="@string/my" />
+
+            <RelativeLayout
+                android:layout_width="37dip"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <View
+                    android:id="@+id/my_unread"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginTop="11dip"
+                    android:background="@drawable/shape_red_dot"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.skye.lover.view.FlowRadioGroup>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_white"
+    android:paddingBottom="@dimen/vertical"
+    android:paddingLeft="@dimen/horizontal"
+    android:paddingRight="@dimen/horizontal"
+    android:paddingTop="@dimen/vertical">
+
+    <!--头像com.skye.lover.view.CircularImage-->
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/avatar"
+        style="@style/avatar" />
+
+    <!-- 昵称 -->
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_vertical"
+        android:layout_marginRight="@dimen/item_vertical"
+        android:layout_toLeftOf="@+id/time"
+        android:layout_toRightOf="@id/avatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/sub_title_size" />
+
+    <!-- 最后一条私信发表时间 -->
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/text_light_gray"
+        android:textSize="@dimen/time_hint_text_size" />
+
+    <!-- 最后一条私信聊天内容 -->
+
+    <com.skye.emoji.EmojiTextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/avatar"
+        android:layout_marginLeft="@dimen/item_vertical"
+        android:layout_toRightOf="@id/avatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/main_text_size" />
+</RelativeLayout>

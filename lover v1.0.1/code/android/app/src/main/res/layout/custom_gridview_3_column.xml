@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ll0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/s0"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <View
+            android:layout_width="@dimen/item_vertical"
+            android:layout_height="match_parent" />
+
+        <com.skye.lover.view.SquareImageView
+            android:id="@+id/img8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            fresco:actualImageScaleType="focusCrop" />
+    </LinearLayout>
+</merge>

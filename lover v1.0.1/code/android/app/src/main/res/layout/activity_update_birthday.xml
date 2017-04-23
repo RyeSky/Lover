@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--更新生日界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context=".activity.my.userinfo.UpdateBirthdayActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+
+    <com.skye.datepicker.DataPicker
+        android:id="@+id/datepicker"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 确定 -->
+
+    <Button
+        android:id="@+id/btn_ok"
+        style="@style/full_column_btn"
+        android:layout_marginBottom="@dimen/vertical"
+        android:layout_marginTop="@dimen/vertical"
+        android:text="@string/ok" />
+</LinearLayout>

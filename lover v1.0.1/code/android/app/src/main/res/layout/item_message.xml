@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 时间 -->
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/shape_empty"
+        android:paddingBottom="@dimen/item_vertical_half"
+        android:paddingLeft="@dimen/item_vertical"
+        android:paddingRight="@dimen/item_vertical"
+        android:paddingTop="@dimen/item_vertical_half"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/time_hint_text_size" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/item_vertical"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/item_vertical"
+        android:background="@drawable/selector_white"
+        android:padding="@dimen/vertical">
+
+        <!--标题-->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/main_text_size" />
+
+        <!--内容-->
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="@dimen/item_vertical"
+            android:maxLines="5"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/sub_text_size"
+            android:visibility="gone" />
+
+        <!--图片-->
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@id/title"
+            android:layout_marginTop="@dimen/item_vertical"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

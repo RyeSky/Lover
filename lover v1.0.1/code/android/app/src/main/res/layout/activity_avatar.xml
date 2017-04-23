@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--头像界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".activity.my.userinfo.AvatarActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+    <com.skye.lover.view.fresco.zoomable.ZoomableDraweeView
+        android:id="@+id/img_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
