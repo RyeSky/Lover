@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 闪屏界面 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    tools:context=".activity.base.SplashActivity">
+
+    <!-- 头像 -->
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img_avatar"
+        style="@style/big_avatar"
+        android:layout_above="@+id/txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:visibility="gone" />
+
+    <!-- 应用名称 -->
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_app_tip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/item_vertical"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@color/text_blue"
+        android:textSize="25sp" />
+
+    <!-- 页脚 -->
+
+    <TextView
+        android:id="@+id/tv_app_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/app_tip"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/sub_text_size" />
+</RelativeLayout>

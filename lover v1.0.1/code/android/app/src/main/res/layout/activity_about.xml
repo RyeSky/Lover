@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--关于界面-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    tools:context="com.skye.lover.activity.my.setting.AboutActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+    <!--应用logo-->
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_launcher" />
+
+    <!--当前版本号-->
+
+    <TextView
+        android:id="@+id/tv_app_current_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/vertical"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/sub_title_size" />
+
+
+    <!--应用版权-->
+
+    <TextView
+        android:id="@+id/tv_app_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:gravity="center_horizontal"
+        android:text="@string/app_right"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/sub_text_size" />
+</RelativeLayout>

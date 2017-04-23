@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?><!--注册界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical"
+    tools:context=".activity.user.RegisterActivity">
+
+    <com.skye.lover.view.Topbar
+        android:id="@+id/topbar"
+        style="@style/topbar" />
+
+    <!-- 用户名 -->
+
+    <EditText
+        android:id="@+id/ed_name"
+        style="@style/single_white_edittext"
+        android:layout_marginTop="@dimen/vertical"
+        android:digits="@string/digits"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:maxLength="@integer/max_text_length" />
+
+    <!-- 密码 -->
+
+    <EditText
+        android:id="@+id/ed_password"
+        style="@style/single_white_edittext"
+        android:layout_marginTop="@dimen/vertical"
+        android:digits="@string/digits"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:maxLength="@integer/max_password_length" />
+
+    <!-- 确认密码 -->
+
+    <EditText
+        android:id="@+id/ed_affirm_password"
+        style="@style/single_white_edittext"
+        android:layout_marginTop="@dimen/vertical"
+        android:digits="@string/digits"
+        android:hint="@string/affirm_password"
+        android:inputType="textPassword"
+        android:maxLength="@integer/max_password_length" />
+
+    <!-- 性别 -->
+
+    <com.skye.lover.view.FlowRadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/horizontal"
+        android:layout_marginRight="@dimen/horizontal"
+        android:layout_marginTop="@dimen/vertical"
+        android:background="@drawable/shape_white"
+        android:orientation="horizontal">
+
+        <!-- 保密 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="@dimen/mark"
+                android:layout_height="@dimen/mark"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/center"
+                android:background="@drawable/shape_secret" />
+
+            <View
+                android:id="@+id/center"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true" />
+
+            <RadioButton
+                android:id="@+id/rb_secret"
+                style="@style/foot_nav_btn_style"
+                android:checked="true"
+                android:text="@string/secret" />
+        </RelativeLayout>
+
+        <!-- 男 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="@dimen/mark"
+                android:layout_height="@dimen/mark"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/center"
+                android:background="@drawable/shape_male" />
+
+            <View
+                android:id="@id/center"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true" />
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                style="@style/foot_nav_btn_style"
+                android:text="@string/male" />
+        </RelativeLayout>
+
+        <!-- 女 -->
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+
+            <View
+                android:layout_width="@dimen/mark"
+                android:layout_height="@dimen/mark"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/center"
+                android:background="@drawable/shape_female" />
+
+            <View
+                android:id="@id/center"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true" />
+
+
+            <RadioButton
+                android:id="@+id/rb_female"
+                style="@style/foot_nav_btn_style"
+                android:text="@string/female" />
+        </RelativeLayout>
+    </com.skye.lover.view.FlowRadioGroup>
+
+    <!-- 确定 -->
+
+    <Button
+        android:id="@+id/btn_ok"
+        style="@style/full_column_btn"
+        android:layout_marginTop="@dimen/vertical"
+        android:text="@string/ok" />
+</LinearLayout>
