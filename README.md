@@ -13,3 +13,8 @@
 android:原生(使用到的框架：网络请求->okhttp3、图片加载缓存->fresco、组件获取事件监听依赖注入->bufferknife)
 
 手机端模块组成：悄悄话社交、私信聊天（不是IM，是PM）、个人中心
+
+
+![image](https://github.com/RyeSky/Lover/blob/master/lover%20v1.0.1/doc/android/screenshot/%E7%99%BB%E5%BD%95.png?raw=true)
+![image](https://github.com/RyeSky/Lover/blob/master/lover%20v1.0.1/doc/android/screenshot/%E8%9C%9C%E8%AF%AD.png?raw=true)
+![image](https://github.com/RyeSky/Lover/blob/master/lover%20v1.0.1/doc/android/screenshot/%E6%82%84%E6%82%84%E8%AF%9D%E8%AF%A6%E6%83%85.png?raw=true)
